@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>STOCK - Dell Keyboard Batch 501</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    </head>
+    <body class="container">
+        <div class="qr-container">
+            <div class="qr-label">
+                <img class="qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=ExampleData" alt="QR">
+                <h1 class="header qr-header">Dell Keyboard</h1>
+                <h2 class="qr-subheader">Batch No. 501</h2>
+            </div>
+            <div class="qr-button-container">
+                <button class="button qr-button">Print QR</button>
+                <a href="inventory.html" style="display:block; margin-top:15px; text-align:center; color: black; text-decoration: none; font-size: 14px;">&larr; Back to Inventory</a>
+            </div>
+        </div>
+    </body> 
+
+    <script>
+    document.querySelector('.qr-button').addEventListener('click', function() {
+        var { jsPDF } = window.jspdf;
+        var qrLabel = document.querySelector('.qr-label');
+
+        html2canvas(qrLabel).then(function(canvas) {
+            var imgData = canvas.toDataURL('image/png');
+            var doc = new jsPDF();
+
+            doc.addImage(imgData, 'PNG', 10, 10, 90, 100);
+            doc.output('dataurlnewwindow');
+        });
+    });
+    </script>
+</html>

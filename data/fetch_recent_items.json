@@ -1,0 +1,26 @@
+[
+    {
+        "id": "205",
+        "itemname": "Dell Keyboard",
+        "qty": "10",
+        "action": "Stock Out",
+        "dateRcd": "2025-11-29",
+        "item_name": "Dell Keyboard"
+    },
+    {
+        "id": "204",
+        "itemname": "Monitor 24\"",
+        "qty": "50",
+        "action": "Stock In",
+        "dateRcd": "2025-11-28",
+        "item_name": "Monitor 24\""
+    },
+    {
+        "id": "203",
+        "itemname": "HDMI Cable",
+        "qty": "5",
+        "action": "Stock Out",
+        "dateRcd": "2025-11-28",
+        "item_name": "HDMI Cable"
+    }
+]

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOCK - Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="sides-container">
+        <nav class="nav-side">
+            <img class="logo-pic" src="logo.png" alt="STOCKS">
+
+            <a href="home.html">
+                <div class="menu-option active">
+                    <img class="icon home" src="home.png" alt="Home">
+                    <h1 class="option-text">Home</h1>
+                </div>
+            </a>
+
+            <a href="inventory.html">
+                <div class="menu-option">
+                    <img class="icon box" src="box.png" alt="Inventory">
+                    <h1 class="option-text">Inventory</h1>
+                </div>
+            </a>
+
+            <a href="records.html">
+                <div class="menu-option">
+                    <img class="icon clip" src="clip.png" alt="Records">
+                    <h1 class="option-text">Records</h1>
+                </div>
+            </a>
+
+            <a href="confirmpage.html">
+                <div class="menu-option">
+                    <img class="icon clip" src="check.png" alt="Confirmation">
+                    <h1 class="option-text">Confirmation</h1>
+                </div>
+            </a>
+
+            <a class="last" href="#">
+                <div class="menu-option">
+                    <img class="icon logout" src="logout.png" alt="Log Out">
+                    <h1 class="option-text">Log Out</h1>
+                </div>
+            </a>
+        </nav>
+
+        <div class="body-side">
+            <div class="logo-body">
+                <img class="logo-pic2" src="logo.png" alt="STOCKS">
+            </div>
+
+            <div class="top-container no-buttons">
+                <div class="header-container no-buttons">
+                    <h2 class="header">HOME</h2>
+                </div>
+            </div>
+
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="box1">
+                        <div class="carousel-box">
+                            <h3 class="pa">Sample Item 1</h3>
+                            <p class="p"><b>50</b></p>
+                            <p class="p">Quantity</p>
+                            <p class="pe">Stock In</p>
+                        </div>
+                    </div>
+
+                    <div class="box1">
+                        <div class="carousel-box">
+                            <h3 class="pa">Sample Item 2</h3>
+                            <p class="p"><b>20</b></p>
+                            <p class="p">Quantity</p>
+                            <p class="pe">Stock Out</p>
+                        </div>
+                    </div>
+
+                    <div class="box1">
+                        <div class="carousel-box">
+                            <h3 class="pa">Sample Item 3</h3>
+                            <p class="p"><b>15</b></p>
+                            <p class="p">Quantity</p>
+                            <p class="pe">Stock In</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="prev-btn">&lt;</button>
+                <button class="next-btn">&gt;</button>
+            </div>
+
+            <div class="table-container home">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>ITEM</th>
+                            <th>QTY</th>
+                            <th>DATE</th>
+                            <th>TYPE</th>
+                        </tr>
+                    </thead>
+                </table>
+                <div class="table-body-container home-table">
+                    <table>
+                        <tbody>
+                            <tr class="main-row">
+                                <td>105</td>
+                                <td>Dell Keyboard</td>
+                                <td>10</td>
+                                <td>11-29-2025</td>
+                                <td>Stock In</td>
+                            </tr>
+
+                            <tr class="main-row">
+                                <td>104</td>
+                                <td>Logitech Mouse</td>
+                                <td>5</td>
+                                <td>11-28-2025</td>
+                                <td>Stock Out</td>
+                            </tr>
+
+                            <tr class="main-row">
+                                <td>103</td>
+                                <td>Monitor 24"</td>
+                                <td>2</td>
+                                <td>11-27-2025</td>
+                                <td>Stock In</td>
+                            </tr>
+
+                            <tr class="main-row">
+                                <td>102</td>
+                                <td>HDMI Cable</td>
+                                <td>50</td>
+                                <td>11-26-2025</td>
+                                <td>Stock In</td>
+                            </tr>
+
+                            <tr class="main-row">
+                                <td>101</td>
+                                <td>USB Hub</td>
+                                <td>12</td>
+                                <td>11-25-2025</td>
+                                <td>Stock Out</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="scripts-home.js"></script>
+</body>
+</html>

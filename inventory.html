@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>STOCK - Inventory</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <script src="js/scripts.js"></script>
+
+    <body>
+		<div class="sides-container">
+			<nav class="nav-side">
+				<img class="logo-pic" src="img/logo.png" alt="STOCKS">
+
+				<a href="home.html">
+					<div class="menu-option">
+						<img class="icon home" src="img/home.png" alt="Home">
+						<h1 class="option-text">Home</h1>
+					</div>
+				</a>
+
+				<a href="inventory.html">
+					<div class="menu-option active">
+						<img class="icon box" src="img/box.png" alt="Inventory">
+						<h1 class="option-text">Inventory</h1>
+					</div>
+				</a>
+				
+				<a href="records.html">
+					<div class="menu-option">
+						<img class="icon clip" src="img/clip.png" alt="Records">
+						<h1 class="option-text">Records</h1>
+					</div>
+				</a>
+
+				<a href="confirmpage.html">
+					<div class="menu-option">
+						<img class="icon clip" src="img/check.png" alt="Confirmation">
+						<h1 class="option-text">Confirmation</h1>
+					</div>
+				</a>
+				
+				<a class="last" href="login.html">
+					<div class="menu-option">
+						<img class="icon logout" src="img/logout.png" alt="Log Out">
+						<h1 class="option-text">Log Out</h1>
+					</div>
+				</a>
+			</nav>
+
+			<div class="body-side">
+				<div class = "logo-body">
+					<img class="logo-pic2" src="img/logo.png" alt="STOCKS">
+				</div>
+
+				<div class="top-container">
+					<div class="header-container">
+						<h2 class="header">INVENTORY</h2>
+					</div>
+					<div class="button-container">
+						<button class="button" id="item-button" onclick="document.getElementById('new-item').style.display='block'">New Item</button>
+					</div>
+				</div>
+
+				<div class="table-container">
+					<table>
+						<thead>
+						<tr>
+							<th>ID</th>
+							<th>ITEM</th>
+							<th>QTY</th>
+							<th>LAST UPDATED</th>
+							<th>ACTIONS</th>
+						</tr>
+						</thead>
+					</table>
+					<div class="table-body-container inventory">
+						<table>
+							<tbody>
+                                <tr class="main-row">
+                                    <td>101</td>
+                                    <td>Dell Keyboard</td>
+                                    <td>150</td>
+                                    <td>11-29-2025</td>
+                                    <td>
+                                        <a class="a-symbols" href="#" onclick="document.getElementById('add-stock').style.display='block'">
+                                            <img class="symbol" src="img/plus.png" alt="Add Stock">
+                                        </a>
+                                        <a class="a-symbols" href="#">
+                                            <img class="symbol" src="img/cross.png" alt="Delete Item">
+                                        </a>
+                                        <img id="batchArrow-101" onclick="toggleBatches(101)" class="symbol arrow" src="img/arrow.png" alt="Show Batches">
+                                    </td>
+                                </tr>
+
+                                <tr class="subrow" id="batches-101" style="display: none;">
+                                    <td colspan="5">
+                                        <div class="subdiv" id="batchDiv-101">
+                                            <table class="subtable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>BATCH ID</th>
+                                                        <th></th>
+                                                        <th>QTY</th>
+                                                        <th>DATE STOCKED</th>
+                                                        <th>ACTIONS</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                            <div class="subtable-body-container">
+                                                <table class="subtable">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>501</td>
+                                                            <td></td>
+                                                            <td>50</td>
+                                                            <td>10-15-2025</td>
+                                                            <td>
+                                                                <a class="a-symbols qr-a" href="viewqr.html">View QR</a>
+                                                                <a class="a-symbols subtable-symbol" href="#"><img class="symbol" src="img/cross.png" alt="Remove"></a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="new-item" class="modal" style="display:none;">
+			<div class="modal-content">
+                <span onclick="document.getElementById('new-item').style.display='none'" style="float:right; cursor:pointer; font-size:20px;">&times;</span>
+				<h2 class="header header-modal">New Item</h2>
+				<form class="modal-form" action="#" method="POST" autocomplete="off">
+                    <input class="modal-fillup" type="text" id="itemName" name="itemname" placeholder="Item Name" required>
+                    <div class="modal-button-container">
+						<input class="button modal-button" type="submit" value="Submit" name="submit">
+					</div>
+                </form>
+			</div>
+		</div>
+
+		<div id="add-stock" class="modal" style="display:none;">
+			<div class="modal-content stock">
+                <span onclick="document.getElementById('add-stock').style.display='none'" style="float:right; cursor:pointer; font-size:20px;">&times;</span>
+				<h2 class="header header-modal">Add Stock</h2>
+				<form class="modal-form" action="#" method="POST">
+					<input type="hidden" id="itemID" name="itemID" value="">
+					<input class="modal-fillup" type="number" id="qty" name="qty" placeholder="Quantity" required>
+					<div class="modal-button-container">
+						<input class="button modal-button" type="submit" value="Submit" name="submit">
+					</div>
+				</form>
+			</div>
+		</div>
+
+        <script>
+            function toggleBatches(id) {
+                var subrow = document.getElementById("batches-" + id);
+                var arrow = document.getElementById("batchArrow-" + id);
+                if (subrow.style.display === "none") {
+                    subrow.style.display = "table-row";
+                    arrow.style.transform = "rotate(90deg)"; 
+                } else {
+                    subrow.style.display = "none";
+                    arrow.style.transform = "rotate(0deg)";
+                }
+            }
+            window.onclick = function(event) {
+                if (event.target.classList.contains('modal')) {
+                    event.target.style.display = "none";
+                }
+            }
+        </script>
+    </body> 
+</html>

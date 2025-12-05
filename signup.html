@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>STOCK - Sign Up</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body class="container">
+        <div class="logo-container">
+            <img class="logo" src="img/logo.png" alt="STOCKS">
+        </div>
+        <div class="form-container">
+            <form action="login.html" method="GET" autocomplete="off">
+                <input class="forms-fillup" type="text" id="name" name="name" placeholder="Name" required>
+                <input class="forms-fillup" type="password" id="password" name="password" placeholder="Password" required>
+                <input class="forms-fillup" type="text" id="code" name="code" placeholder="Enter OTP" required>
+
+                <div class="form-button-container">
+                    <button class="button qr-button" type="submit" name="submit">Sign Up</button>
+                    <a class="link left" href="login.html">Return to login</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-container small">
+            <form action="#" method="POST" autocomplete="off">
+                <div class="form-button-container small">
+                    <button class="button qr-button" type="button">Generate OTP</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
